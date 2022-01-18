@@ -12,4 +12,8 @@ to search for recipes with a simple criteria:
     2) Include ingredient
     3) Exclude ingredient
     
- Front-end is a barebones HTML page with three input fields matching the criteria above.
+ Front-end is composed of two barebones HTML pages:
+    1) Search page with three input fields matching the criteria above.
+    2) Results page with a table for found recipes and a link for new search.
+    
+ Back-end is written in Python, using the Flask micro web framework and the following libraries: requests, Flask-WTF, and wtf-forms.
