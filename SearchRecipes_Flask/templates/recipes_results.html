@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipes</title>
+</head>
+<body>
+    <table border="5">
+        <tr>
+            <th>Name</th><th>Rating</th><th>Views</th><th>Thumbnail</th>
+            <th>Videos</th>
+        </tr>
+
+        {% for i in recipes %}
+        <tr>
+            <td>{{ i['shortTitle'] }}</td>
+            <td>{{ i['rating'] }}</td>
+            <td>{{ i['views'] }}</td>
+            <td><img src="{{ i['thumbnail'] }}"></td>
+            <iframe width="300" height="300" src="https://www.youtube.com/embed/<%= {{ i['youTubeId'] }}%>"encrypted-media;></iframe>
+            {% endfor %}
+        </tr>
+    </table>
+
+    <br><br>
+
+<a href="{{url_for('search')}}">New Search</a>
+</body>
+</html>

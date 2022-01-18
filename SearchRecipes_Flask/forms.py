@@ -1,3 +1,4 @@
+from urllib import response
 from SearchRecipes_Flask import main_functions
 import requests
 from flask_wtf import FlaskForm
@@ -16,10 +17,20 @@ def get_data(meal, include, exclude):
           + meal + "&excludeIngredients=" + exclude + "&includeIngredients="\
           + include + "&apiKey=" + api_key
     
-    # 1) Make the api request using the requests .get method
-    
-    # 2) Save the response as a json file on the specified directory
-    
-    # 3) Read the JSON file and save it to the specified variable
-    
-    # 4) return recipes
+    # 1 - Make the api request using the requests .get method
+    print("1) Making API request: ")
+    response = requests.get(url).json()
+    print("Done")
+
+    # 2 - Save the response as a json file on the specified directory
+    print("2) Saving JSON Info received from API request")
+    main_functions.save_to_file(response, "SearchRecipes_Flask_V2/JSON_Files/recipes.json")
+    print("Done")
+
+    # 3 - Read the JSON file and save it to the specified variable
+    print("3) Reading information from JSON File")
+    recipes = main_functions.read_from_file("SearchRecipes_Flask_V2/JSON_Files/recipes.json")
+    print("Done")
+
+    # 4 - Return found recipes
+    return recipes
