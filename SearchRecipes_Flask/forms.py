@@ -24,12 +24,12 @@ def get_data(meal, include, exclude):
 
     # 2 - Save the response as a json file on the specified directory
     print("2) Saving JSON Info received from API request")
-    main_functions.save_to_file(response, "SearchRecipes_Flask_V2/JSON_Files/recipes.json")
+    main_functions.save_to_file(response, "SearchRecipes_Flask/JSON_Files/recipes.json")
     print("Done")
 
     # 3 - Read the JSON file and save it to the specified variable
     print("3) Reading information from JSON File")
-    recipes = main_functions.read_from_file("SearchRecipes_Flask_V2/JSON_Files/recipes.json")
+    recipes = main_functions.read_from_file("SearchRecipes_Flask/JSON_Files/recipes.json")
     print("Done")
 
     # 4 - Return found recipes
