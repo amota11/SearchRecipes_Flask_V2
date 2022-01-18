@@ -7,7 +7,7 @@
 <body>
     <table border="5">
         <tr>
-            <th>Name</th><th>Rating</th><th>Views</th><th>Thumbnail</th>
+            <th>Name</th><th>Rating</th><th>Views</th><!--<th>Thumbnail</th>-->
             <th>Videos</th>
         </tr>
 
@@ -16,8 +16,8 @@
             <td>{{ i['shortTitle'] }}</td>
             <td>{{ i['rating'] }}</td>
             <td>{{ i['views'] }}</td>
-            <td><img src="{{ i['thumbnail'] }}"></td>
-            <iframe width="300" height="300" src="https://www.youtube.com/embed/<%= {{ i['youTubeId'] }}%>"encrypted-media;></iframe>
+            <!--<td><img src="{{ i['thumbnail'] }}" width="320" height="240"></td>-->
+            <td><iframe width="320" height="240" src="https://www.youtube.com/embed/{{ i['youTubeId'] }}" frameborder="0" allow="encrypted-media; fullscreen"></iframe></td>
             {% endfor %}
         </tr>
     </table>
